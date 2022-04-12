@@ -1,4 +1,6 @@
+diff-match-patch==20200713
 Django==2.1.5
-Pillow==5.4.1
-pytz==2018.9
 django-import-export==1.2.0
+Pillow==9.1.0
+pytz==2018.9
+tablib==3.2.1
