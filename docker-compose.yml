@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  sherlocked:
+    restart: always
+    build: .
+    ports:
+      - 8005:8000
+    volumes:
+      - type: volume
+        source: database
+        target: /sherlocked/database/
+    command: >
+      bash -c "python3 manage.py makemigrations
+      && python3 manage.py migrate
+      && /usr/local/bin/gunicorn sherlocked2019.wsgi:application -b :8000"
+
+volumes:
+  database:
