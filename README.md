@@ -1,5 +1,5 @@
-# sherlocked2019
-Code for sherlocked2019 event.
+# sherlocked2022
+Code for sherlocked2022 event.
 
 **Requirements:**
 
