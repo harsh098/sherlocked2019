@@ -6,6 +6,7 @@ from django.shortcuts import HttpResponse, render, redirect
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 # from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from sherlocked2019 import settings
 
 from userAuth.models import Player
 from .models import Question
@@ -33,7 +34,9 @@ def play(request):
     the no. of question a player have solved. The submit url
     also redirects to this question.
     """
-
+    if datetime.now() < settings.START_TIME:
+        return render(request,'sherlocked/wait.html')
+     
     player = Player.objects.get(username=request.user.username)
     
     tz_info = player.unlock_time.tzinfo

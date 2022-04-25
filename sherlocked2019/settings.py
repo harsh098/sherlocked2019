@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-
+from datetime import datetime, timedelta
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +25,7 @@ SECRET_KEY = '^+a5px@hpae+f7bw6d+33lgs!@3zsp&jfsc$ooys98$pa=&z1u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +123,6 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'sherlocked/description/'
 LOGOUT_REDIRECT_URL = 'login'
+
+START_TIME = datetime(2022, 4, 26, 0, 0, 0, 0)
+END_TIME = datetime(2022, 4, 29, 0, 0, 0, 0)

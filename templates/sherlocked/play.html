@@ -20,7 +20,7 @@
             <source src="{% static 'sherlocked/audio/music.mp3' %}" type="audio/mpeg">
         </audio>
         <h2>Question</h2>
-        <p style="margin-top: 2%; margin-left: 1%;" id="question-main">{{ question.question_text }}</p>
+        <p style="margin-top: 2%; margin-left: 0%; font-size: 1.4em ;font-weight: 600 !important;" id="question-main">{{ question.question_text }}</p>
         {% if question.image %}
             <div id="ques-img" style="margin-top: 2%; margin-left: 1%;">
                     <img src="{{ question.image.url }}" alt="Question Image">
@@ -32,7 +32,7 @@
             {% csrf_token %}
             <input name="answer" id = "answer" type="text" placeholder="Answer">
             <p id='response'></p>
-            <p><input class="btn1 d-block ques-btn" type="submit" value="submit"></p>
+            <p><input class="btn1 d-block ques-btn" type="submit" value="Submit"></p>
         </form>
     </div>
 

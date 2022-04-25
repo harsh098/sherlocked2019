@@ -29,6 +29,7 @@ class Signup(View):
     def get(self, request):
         form = CustomUserForm()
         return render(request, 'registration/signup.html', {'form': form})
+    
     def post(self, request):
         form = CustomUserForm(request.POST)
         print(form.errors)
@@ -36,3 +37,5 @@ class Signup(View):
             form.save()
             return redirect('login')
         return render(request, 'registration/signup.html', {'form': form})
+    
+        
