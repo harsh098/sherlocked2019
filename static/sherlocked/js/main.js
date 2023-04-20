@@ -7,3 +7,7 @@ function toggle () {
 		div.classList.add('active');
 	}
 }
+
+function showQuestions() {
+	window.location.href = '/sherlocked/play'
+}

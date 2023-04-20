@@ -6,6 +6,8 @@ services:
     build: .
     ports:
       - 8005:8000
+    env_file:
+      - stack.env
     volumes:
       - type: volume
         source: database

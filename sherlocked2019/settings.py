@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^+a5px@hpae+f7bw6d+33lgs!@3zsp&jfsc$ooys98$pa=&z1u'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,5 +127,21 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'sherlocked/description/'
 LOGOUT_REDIRECT_URL = 'login'
 
-START_TIME = datetime(2022, 4, 26, 0, 0, 0, 0)
-END_TIME = datetime(2022, 4, 29, 0, 0, 0, 0)
+
+START_DD=int(os.getenv("START_DD"))
+START_MM=int(os.getenv("START_MM"))
+START_YY=int(os.getenv("START_YY"))
+START_HRS=int(os.getenv("START_HRS"))
+START_MINS=int(os.getenv("START_MINS"))
+START_SEC=int(os.getenv("START_SEC"))
+START_MS=int(os.getenv("START_MS"))
+END_DD=int(os.getenv("END_DD"))
+END_MM=int(os.getenv("END_MM"))
+END_YY=int(os.getenv("END_YY"))
+END_HRS=int(os.getenv("END_HRS"))
+END_MINS=int(os.getenv("END_MINS"))
+END_SEC=int(os.getenv("END_SEC"))
+END_MS=int(os.getenv("END_MS"))
+
+START_TIME = datetime(START_YY, START_MM, START_DD, START_HRS, START_MINS, START_SEC, START_MS)
+END_TIME = datetime(END_YY, END_MM, END_DD, END_HRS, END_MINS, END_SEC, END_MS)
